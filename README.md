@@ -1,11 +1,20 @@
 # GeoTrackNet
 
-TensorFlow implementation of the model proposed in "A Multi-Task Deep Learning Architecture for Maritime Surveillance Using AIS Data Streams" (https://ieeexplore.ieee.org/abstract/document/8631498) and "GeoTrackNet—A Maritime Anomaly Detector using Probabilistic Neural Network Representation of AIS Tracks and A Contrario Detection" (https://arxiv.org/abs/1912.00682).
 (GeoTrackNet is the anomaly detection module of MultitaskAIS).
 
 All the codes related to the Embedding block are adapted from the source code of Filtering Variational Objectives:
 https://github.com/tensorflow/models/tree/master/research/fivo
 
+
+#### To run locally
+
+- unzip example pickle data
+
+```
+cd GeoTrackNet
+conda env update --file requirements.yml
+conda activate PY3GPU
+```
 
 #### Directory Structure
 The elements of the code are organized as follows:
@@ -104,7 +113,7 @@ python geotracknet.py \
   --mode=local_logprob \
   --dataset_dir=./data 
   --trainingset_name=ct_2017010203_10_20/ct_2017010203_10_20_train.pkl \
-  --testset_name=ct_2017010203_10_20/ct_2017010203_10_20_valid.pkl \
+  --testset_name=ct_2017010203_10_20/ct_2017010203_10_20_test.pkl \ 
   --lat_min=47.5 \
   --lat_max=49.5 \
   --lon_min=-7.0 \
